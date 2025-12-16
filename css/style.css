@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'KerakNeraka';
-  src: url('./KerakNeraka-8Oaoz.otf');
+  src: url('Amore\ Christmas.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  --color-bg: rgba(103, 157, 157, 0.587);
-  --color-fg: #fff;
+  --color-bg: rgba(51, 122, 199, 0.529);
+  --color-fg: #dd2222;
 
-  --font-body: sans-serif;
+  --font-body: 'KerakNeraka', sans-serif;
   --font-header: 'KerakNeraka', sans-serif;
 
   --step--2: clamp(0.6331rem, 0.6141rem + 0.0949vw, 0.6877rem);
@@ -45,7 +45,7 @@ h1 {
     font-size: var(--step-5);
     line-height: 1;
     color: var(--color-fg);
-    font-family: var(--font-header);
+    font-family: var(--font-body);
     letter-spacing: .1em;
 }
 
@@ -60,4 +60,24 @@ canvas {
     top: 0;
     left: 0;
     z-index: 0;
+}
+
+#tomtad {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.tomte-visible {
+    animation: tomte-in 0.6s ease both;
+}
+.tomte-hidden {
+    animation: tomte-out 0.6s ease both;
+}
+@keyframes tomte-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes tomte-out {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(20px); }
 }

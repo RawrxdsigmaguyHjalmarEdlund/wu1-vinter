@@ -11,8 +11,13 @@
 
 <body>
   <main>
-    <h1 id="title">SlasK</h1>
-    <p id="message">The slask oh yeah</p>
+    <audio id="bellsAudio" src="festive-christmas-bells-439607.mp3"></audio>
+    <audio id="ho-ho-ho" src="ho-ho-ho-merry-christmas-439603.mp3"></audio>
+    <h1 onclick="document.getElementById('bellsAudio').play()" id="title">God jul</h1>
+    <p onclick="showtomte(); document.getElementById('ho-ho-ho').play()" id="message">Och gott nytt år</p>
+    <div id="tomtad" style="display: none; position: fixed; top: 0; left:0; width: 100vw; height: 100vh; background-color: black; z-index: 9999;">
+      <img src="6506ec38-208d-4c35-95fc-1150ca886a16.jpg" alt="tomte" style="width: 100vw; height: 100vh; object-fit:cover;">
+    </div>
   </main>
   <script src="js/Particle.js"></script>
   <script src="js/main.js"></script>

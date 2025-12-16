@@ -1,5 +1,5 @@
 /* Om du vill ändra snöfärgen */
-const color = [255, 255, 255];
+const color = [250, 250, 250];
 /* justera hur snabbt snön faller */
 const speed = 5;
 
@@ -47,8 +47,8 @@ const step = () => {
 
   particles = particles.filter((particle) => !particle.toDelete);
 
-  if (particles.length < 400) {
-    spawnParticles(3);
+  if (particles.length < 1000000) {
+    spawnParticles(10);
   }
 
   window.requestAnimationFrame(step);
@@ -56,7 +56,6 @@ const step = () => {
 
 window.requestAnimationFrame(step);
 
-/* Ladda in text från URL-parametrar */
 const getQueryParams = () => {
   const params = new URLSearchParams(window.location.search);
   const title = params.get('title');
@@ -72,4 +71,22 @@ if (title || message) {
   if (titleElement) titleElement.textContent = title;
   const messageElement = document.querySelector("#message");
   if (messageElement) messageElement.textContent = message;
+}
+
+function showtomte() {
+  const tomte = document.getElementById('tomtad');
+  if (!tomte) return;
+  tomte.style.display = 'block';
+  tomte.classList.remove('tomte-hidden');
+  tomte.classList.add('tomte-visible');
+
+  if (window.__tomteTimeout) clearTimeout(window.__tomteTimeout);
+
+  window.__tomteTimeout = setTimeout(() => {
+    tomte.classList.remove('tomte-visible');
+    tomte.classList.add('tomte-hidden');
+    setTimeout(() => {
+      tomte.style.display = 'none';
+    }, 600);
+  }, 3500);
 }
